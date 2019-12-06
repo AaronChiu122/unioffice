@@ -10,7 +10,6 @@ package document
 import (
 	"archive/zip"
 	"errors"
-	"flag"
 	"fmt"
 	"image"
 	"image/jpeg"
@@ -21,10 +20,7 @@ import (
 	"strings"
 
 	"github.com/unidoc/unioffice"
-	"github.com/unidoc/unioffice/color"
 	"github.com/unidoc/unioffice/common"
-	"github.com/unidoc/unioffice/common/license"
-	"github.com/unidoc/unioffice/measurement"
 	"github.com/unidoc/unioffice/zippkg"
 
 	"github.com/unidoc/unioffice/schema/soo/dml"
@@ -180,20 +176,20 @@ func (d *Document) Save(w io.Writer) error {
 	}
 	dt := unioffice.DocTypeDocument
 
-	if !license.GetLicenseKey().IsLicensed() && flag.Lookup("test.v") == nil {
-		fmt.Println("Unlicensed version of UniOffice")
-		fmt.Println("- Get a license on https://unidoc.io")
-		hdr := d.AddHeader()
-		para := hdr.AddParagraph()
-		para.Properties().AddTabStop(2.5*measurement.Inch, wml.ST_TabJcCenter, wml.ST_TabTlcNone)
-		run := para.AddRun()
-		run.AddTab()
-		run.AddText("Unlicensed version of UniOffice - Get a license on https://unidoc.io")
-		run.Properties().SetBold(true)
-		run.Properties().SetSize(14)
-		run.Properties().SetColor(color.Red)
-		d.BodySection().SetHeader(hdr, wml.ST_HdrFtrDefault)
-	}
+	// if !license.GetLicenseKey().IsLicensed() && flag.Lookup("test.v") == nil {
+	// 	fmt.Println("Unlicensed version of UniOffice")
+	// 	fmt.Println("- Get a license on https://unidoc.io")
+	// 	hdr := d.AddHeader()
+	// 	para := hdr.AddParagraph()
+	// 	para.Properties().AddTabStop(2.5*measurement.Inch, wml.ST_TabJcCenter, wml.ST_TabTlcNone)
+	// 	run := para.AddRun()
+	// 	run.AddTab()
+	// 	run.AddText("Unlicensed version of UniOffice - Get a license on https://unidoc.io")
+	// 	run.Properties().SetBold(true)
+	// 	run.Properties().SetSize(14)
+	// 	run.Properties().SetColor(color.Red)
+	// 	d.BodySection().SetHeader(hdr, wml.ST_HdrFtrDefault)
+	// }
 
 	z := zip.NewWriter(w)
 	defer z.Close()
