@@ -5,7 +5,7 @@ library for creation and editing of docx/xlsx/pptx files.
 Requires **go1.8+**, builds are tested with 1.8, 1.9 and tip.
 
 [![Build Status](https://travis-ci.org/unidoc/unioffice.svg?branch=master)](https://travis-ci.org/unidoc/unioffice)
-[![GitHub (pre-)release](https://img.shields.io/github/release/unidoc/unioffice/all.svg)](https://github.com/unidoc/unioffice/releases)
+[![GitHub (pre-)release](https://img.shields.io/github/release/unidoc/unioffice/all.svg)](https://github.com/AaronChiu122/unioffice/releases)
 [![License: AGPL v3](https://img.shields.io/badge/License-Dual%20AGPL%20v3/Commercial-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![GoDoc](https://godoc.org/github.com/unidoc/unioffice?status.svg)](https://godoc.org/github.com/unidoc/unioffice)
 [![go 1.8+](https://img.shields.io/badge/go-1.8%2B-blue.svg)](http://golang.org)
